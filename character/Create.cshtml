@@ -1,0 +1,75 @@
+﻿@model manga2.Models.mangacharacters
+
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Content/CSS/character bar.css" rel="stylesheet" />
+<link href="~/Content/CSS/stylingC.css" rel="stylesheet" />
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Characters</h4>
+        <hr/>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger"})
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Series, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Series, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Series, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*@Html.LabelFor(m => m.image)
+        @Html.EditorFor(m => m.image)*@
+        <div class="form-group">
+            @Html.LabelFor(m => m.bio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.bio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.bio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.strengths, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.strengths, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.strengths, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.weaknesses, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.weaknesses, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.weaknesses, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        @*@Html.LabelFor(m => m.bio)
+        @Html.EditorFor(m => m.bio)
+
+        @Html.LabelFor(m => m.strengths)
+        @Html.EditorFor(m => m.strengths)
+
+        @Html.LabelFor(m => m.weaknesses)
+        @Html.EditorFor(m => m.weaknesses)
+
+        @Html.LabelFor(m => m.Series)
+        @Html.EditorFor(m => m.Series)*@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create Series" class="btn btn-default" />
+            </div>
+        </div>
+        @*<input type="submit" value="Create Character" />*@
+    </div>
+}
+@Html.ActionLink("Back to List","Index")

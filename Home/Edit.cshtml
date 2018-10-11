@@ -1,0 +1,63 @@
+﻿@model manga2.Models.mangaseries
+
+@{
+    ViewBag.Title = "Edit";
+}
+<link href="~/Content/CSS/character bar.css" rel="stylesheet" />
+<link href="~/Content/CSS/stylingC.css" rel="stylesheet" />
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Series</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.author, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.author, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.author, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.manga_series, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.manga_series, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.manga_series, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.release, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.release, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.release, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save Changes" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}
+@Html.ActionLink("Back to List", "Index")

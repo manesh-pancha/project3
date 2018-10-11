@@ -1,0 +1,13 @@
+﻿body {
+    background-color:gainsboro;
+    /*opacity:0.9;*/
+}
+h2, h4, h3 {
+    text-align:center;
+}
+
+p{
+    align-items:center;
+}
+
+

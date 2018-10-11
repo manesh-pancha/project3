@@ -1,0 +1,39 @@
+﻿@model IEnumerable<manga2.Models.mangaseries>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    int count = 0;
+}
+<p>
+    @Html.ActionLink("Create New Series", "Create")
+</p>
+<link href="~/Content/CSS/flexbox index series.css" rel="stylesheet" />
+<link href="~/Content/CSS/character bar.css" rel="stylesheet" />
+<link href="~/Content/CSS/stylingC.css" rel="stylesheet" />
+<div class="flexContainer">
+
+    @foreach (var item in Model)
+    {
+        if (count % 4 == 0)
+        {
+            <br />
+            <br />
+        }
+
+        <div class="dbItem">
+            <a href="@Url.Action("Details", new {id= item.ID })">
+                <img class="img-responsive" src="@Url.Content(item.image)"/>
+
+            </a>
+           <h4>@Html.DisplayFor(m => item.manga_series)</h4>
+                
+        </div>
+        count++;
+
+    }
+
+
+</div>

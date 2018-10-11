@@ -1,0 +1,50 @@
+﻿@model IEnumerable<manga2.Models.mangacharacters>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>@Html.ActionLink("Create New Character", "Create")</p>
+
+<link href="~/Content/CSS/stylingC.css" rel="stylesheet" />
+<link href="~/Content/CSS/character bar.css" rel="stylesheet" />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Series)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.strengths)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weaknesses)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img src="@Html.DisplayFor(m => item.image)" height="100" width="100" /></td>
+            <td>@Html.DisplayFor(m => item.Series)</td>
+            <td>@Html.DisplayFor(m => item.bio)</td>
+            <td>@Html.DisplayFor(m => item.strengths)</td>
+            <td>@Html.DisplayFor(m => item.weaknesses)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+
+    }
+</table>
+

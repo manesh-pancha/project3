@@ -1,0 +1,41 @@
+﻿@model manga2.Models.mangacharacters
+
+@{
+    ViewBag.Title = "Delete";
+}
+<link href="~/Content/CSS/stylingC.css" rel="stylesheet" />
+<link href="~/Content/CSS/character bar.css" rel="stylesheet" />
+<h2>Delete</h2>
+
+<h4>Are you sure you want to delete this record?</h4>
+
+
+<dl class="dl-horizontal">
+    <dt>@Html.LabelFor(m => m.image)</dt>
+    <dd>@Html.EditorFor(m => m.image)</dd>
+
+    <dt>@Html.LabelFor(m => m.Series)</dt>
+    <dd>@Html.EditorFor(m => m.Series)</dd>
+
+    <dt>@Html.LabelFor(m => m.bio)</dt>
+    <dd>@Html.EditorFor(m => m.bio)</dd>
+
+    <dt>@Html.LabelFor(m => m.strengths)</dt>
+    <dd>@Html.EditorFor(m => m.strengths)</dd>
+
+    <dt>@Html.LabelFor(m => m.weaknesses)</dt>
+    <dd>@Html.EditorFor(m => m.weaknesses)</dd>
+
+    
+
+</dl>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-11">
+            <input type="submit" class="btn btn-default" value="Delete Record" />
+        </div>
+    </div>
+}
+@Html.ActionLink("Back to List", "Index")

@@ -1,0 +1,51 @@
+﻿@model manga2.Models.mangaseries
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href="~/Content/CSS/character bar.css" rel="stylesheet" />
+<link href="~/Content/CSS/stylingC.css" rel="stylesheet" />
+<h2>Details</h2>
+
+<h4>Series</h4>
+<hr />
+<link href="~/Content/CSS/detailsS.css" rel="stylesheet" />
+<!--Parent BOX-->
+<div class="flex-container">
+
+
+    <div class="child1">
+        <div class="child2">
+            @Html.DisplayNameFor(m => m.author)
+            @Html.DisplayFor(m => m.author)
+        </div>
+        
+        <div class="child2">
+            @Html.DisplayNameFor(m => m.manga_series)
+            @Html.DisplayFor(m => m.manga_series)
+        </div>
+        
+        <div class="child2">
+            @Html.DisplayNameFor(m => m.release)
+            @Html.DisplayFor(m => m.release)
+        </div>
+       
+        <div class="child2">
+            @Html.DisplayNameFor(m => m.status)
+            @Html.DisplayFor(m => m.status)
+        </div>
+       
+        <p>
+            @Html.ActionLink("Edit Record", "Edit", new { id = Model.ID })
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+    <div class="I">
+        @*@Html.DisplayNameFor(m => m.image)*@
+        <img src="@Html.DisplayFor(m => m.image)" height="200" width="200" />
+    </div>
+    @*<td><img src="@Html.DisplayFor(m => item.image)" height="100" width="100" /></td>*@
+
+</div>
+<!--end of parent-->

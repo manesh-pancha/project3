@@ -1,0 +1,39 @@
+﻿body {
+    
+}
+h2, h4, h3{
+    text-align:center;
+}
+
+p{
+    align-items:center;
+}
+.container.body-content{
+    color:black;
+}
+.navbar-header{
+    background-color:black;
+}
+.navbar.navbar-inverse.navbar-fixed-top{
+    background-color:white;
+    color:black;
+    border:none;
+    font-size:2em;
+    position:fixed;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: black;
+}
+
+
+
+
+/*@media screen and (max-width:700px ) {
+    .navbar.navbar-inverse.navbar-fixed-top {
+        position:fixed;
+    }
+}*/

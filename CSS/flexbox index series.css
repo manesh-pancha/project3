@@ -1,0 +1,35 @@
+﻿body {
+}
+/***  Flexbox for Home/Index page layout*****/
+.flexContainer 
+{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+  
+}
+.headerButtons
+{
+    width: 100%;
+    text-align:center;
+    
+}
+.flexContainer>.dbItem
+{
+  border: white;
+  margin: 30px;
+  padding: 0px;
+}
+img.img-responsive{
+    height:300px;
+    width:400px;
+    
+}
+p{
+    margin-top:80px;
+    font-size:1.4em;
+}
+h4{
+    font-size:1.4em;
+}
